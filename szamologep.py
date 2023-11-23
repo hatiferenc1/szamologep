@@ -20,25 +20,25 @@ def szazalek(szam , szazalek_erteke):
 def main():
   st.title("Számológép")
 
-elso = st.number_input("Add meg a második számot:")
+  elso = st.number_input("Add meg a második számot:")
 
-muvelet = st.selectbox("Válasszd ki a műveletet ",("összeadás","kivunás","osztás","szorzás","százalékszámítás"))
+  muvelet = st.selectbox("Válasszd ki a műveletet ",("összeadás","kivunás","osztás","szorzás","százalékszámítás"))
 
-masodik = st.number_input("Add meg a második számot:")
+  masodik = st.number_input("Add meg a második számot:")
 
-eredmeny = 0
-if muvelet == "összeadás":
-  result = osszeadas(elso,masodik) 
-elif muvelet == "kivonás":
-  result = kivonas(elso,masodik)
-elif muvelet == "szorzás":
-  result = szorzas(elso,masodik)
-elif muvelet == "osztás":
-  result = osztas(elso,masodik)
+  result = 0
+  if muvelet == "összeadás":
+    result = osszeadas(elso,masodik) 
+  elif muvelet == "kivonás":
+    result = kivonas(elso,masodik)
+  elif muvelet == "szorzás":
+    result = szorzas(elso,masodik)
+  elif muvelet == "osztás":
+    result = osztas(elso,masodik)
   elif muvelet == "százalékszámítás":
-  result = szazalekszamitas(elso,masodik)
+    result = szazalekszamitas(elso,masodik)
 
-st.write(f"Eredmény:{eredmeny}")
+  st.write(f"Eredmény:{eredmeny}")
 
 if __name__ == '__main__':
   main()
