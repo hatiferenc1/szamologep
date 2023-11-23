@@ -23,9 +23,11 @@ def main():
 
   szam1 = st.number_input("Első szám:")
 
+  szam2 = st.number_input("Második szám:")
+
   muvelet = st.selectbox("Válassz műveletet:",("összeadás","kivonás","szorzás","osztás","százalékszámítás"))
 
-  szam2 = st.number_input("Második szám:")
+  
 
   result = 0
   if muvelet == "összeadás":
