@@ -1,45 +1,45 @@
-import streamlit as st 
+import streamlit as st
 
-def osszead(elso , masodik):
-  return elso + masodik 
-def kivon(elso , masodik):
-  return elso-masodik
+def osszeadas(szam1, szam2):
+  return szam1 + szam2
 
-def szorzas(elso , masodik):
-  return elso * masodik 
-def osztas(elso , masodik):
-  if masodik != 0:
-    return elso / masodik
+def kivonas(szam1, szam2):
+  return szam1 - szam2
+
+def szorzas(szam1, szam2):
+  return szam1 * szam2
+
+def osztas(szam1, szam2):
+  if szam2 != 0:
+    return szam1 / szam2
   else:
-    return "Nullával nem lehet osztani hülyegyerek"
+    return "Nullával nem osztható"
 
-
-def szazalek(szam , szazalek_erteke):
-  return szam * (szazalek_erteke / 100)
+def szazalek(szam, szazalek_ertek):
+  return szam * (szazalek_ertek / 100)
 
 def main():
   st.title("Számológép")
 
-  elso = st.number_input("Add meg a második számot:")
+  szam1 = st.number_input("Első szám:")
 
-  muvelet = st.selectbox("Válasszd ki a műveletet ",("összeadás","kivunás","osztás","szorzás","százalékszámítás"))
+  muvelet = st.selectbox("Válassz műveletet:",("összeadás","kivonás","szorzás","osztás","százalékszámítás"))
 
-  masodik = st.number_input("Add meg a második számot:")
+  szam2 = st.number_input("Második szám:")
 
   result = 0
   if muvelet == "összeadás":
-    result = osszeadas(elso,masodik) 
+    result = osszeadas(szam1, szam2)
   elif muvelet == "kivonás":
-    result = kivonas(elso,masodik)
+    result = kivonas(szam1, szam2)
   elif muvelet == "szorzás":
-    result = szorzas(elso,masodik)
+    result = szorzas(szam1, szam2)
   elif muvelet == "osztás":
-    result = osztas(elso,masodik)
+    result = osztas(szam1, szam2)
   elif muvelet == "százalékszámítás":
-    result = szazalekszamitas(elso,masodik)
+    result = szazalek(szam1, szam2)
 
-  st.write(f"Eredmény:{eredmeny}")
+  st.write(f"Eredmény: {result}")
 
 if __name__ == '__main__':
   main()
-  
